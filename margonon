@@ -1,0 +1,52 @@
+#!/usr/bin/python
+
+import sys
+
+def stred(lst):
+	if len(lst) == 0:
+		return ''
+	elif len(lst) == 1:
+		return '%d' % lst[0]
+	else:
+		lst = map((lambda i: '%s' % i), lst)
+		return reduce((lambda a, b: '%s %s' % (a, b)), lst)
+
+s = [line[:-1] for line in sys.stdin]
+width = len(s[0])/2
+height = len(s)
+
+print width, height
+
+for y in range(height):
+	c = 0
+	lst = []
+	prev = ' '
+	for x in range(width):
+		curr = s[y][2*x]
+		if (prev == 'X') & (curr == ' '):
+			lst.append(c)
+			c = 0
+		elif (curr == 'X'):
+			c = c+1
+		prev = curr
+	if c > 0:
+		lst.append(c)
+	print stred(lst)
+
+for x in range(width):
+	c = 0
+	lst = []
+	prev = ' '
+	for y in range(height):
+		curr = s[y][2*x]
+		if (prev == 'X') & (curr == ' '):
+			lst.append(c)
+			c = 0
+		elif (curr == 'X'):
+			c = c+1
+		prev = curr
+	if c > 0:
+		lst.append(c)
+	print stred(lst)
+
+# vim:ts=2
