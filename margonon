@@ -17,7 +17,24 @@ def normalize_line(line):
         for c in line
     )
 
+def is_line_double_width(line):
+    if len(line) & 1:
+        return False
+    it = iter(line)
+    for x, y in zip(it, it):
+        if x != y:
+            return False
+    return True
+
+def reduce_line_width(line):
+    return ''.join(
+        line[2 * n]
+        for n in range(len(line) // 2)
+    )
+
 def smoothen(pict):
+    if all(is_line_double_width(line) for line in pict):
+        pict = [reduce_line_width(line) for line in pict]
     max_width = max(len(line) for line in pict)
     return [
         normalize_line(line) + (max_width - len(line)) * ' '
