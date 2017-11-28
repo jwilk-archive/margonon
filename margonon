@@ -13,7 +13,7 @@ def stred(lst):
 
 def main():
     s = [line.rstrip('\r\n') for line in sys.stdin]
-    width = len(s[0]) // 2
+    width = len(s[0])
     height = len(s)
     print(width, height)
     for y in range(height):
@@ -21,7 +21,7 @@ def main():
         lst = []
         prev = ' '
         for x in range(width):
-            curr = s[y][2*x]
+            curr = s[y][x]
             if (prev == 'X') & (curr == ' '):
                 lst.append(c)
                 c = 0
@@ -36,7 +36,7 @@ def main():
         lst = []
         prev = ' '
         for y in range(height):
-            curr = s[y][2*x]
+            curr = s[y][x]
             if (prev == 'X') & (curr == ' '):
                 lst.append(c)
                 c = 0
