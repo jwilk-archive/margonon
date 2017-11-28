@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# encoding=UTF-8
+#!/usr/bin/python3
 
 # Copyright © 2004-2017 Jakub Wilk <jwilk@jwilk.net>
 # SPDX-License-Identifier: MIT
@@ -14,9 +13,9 @@ def stred(lst):
 
 def main():
     s = [line.rstrip('\r\n') for line in sys.stdin]
-    width = len(s[0])/2
+    width = len(s[0]) // 2
     height = len(s)
-    print width, height
+    print(width, height)
     for y in range(height):
         c = 0
         lst = []
@@ -31,7 +30,7 @@ def main():
             prev = curr
         if c > 0:
             lst.append(c)
-        print stred(lst)
+        print(stred(lst))
     for x in range(width):
         c = 0
         lst = []
@@ -46,7 +45,7 @@ def main():
             prev = curr
         if c > 0:
             lst.append(c)
-        print stred(lst)
+        print(stred(lst))
 
 if __name__ == '__main__':
     main()
