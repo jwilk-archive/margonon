@@ -49,4 +49,4 @@ for x in range(width):
 		lst.append(c)
 	print stred(lst)
 
-# vim:ts=2
+# vim:ts=4 sts=4 sw=4 noet
