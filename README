@@ -1,0 +1,46 @@
+.. code:: console
+
+   $ cat test/image
+    XXXX
+   XX XXX
+   XXXXXX
+    XXXXX
+      XXX
+      XXX     X
+      XX  XX  XX
+     XXX XXXX  XX
+     XX  XXXXX XX
+     XX XX  XX XX
+     XXXXX  XXXXX
+      XXX    XXX
+
+   $ margonon < test/image
+   14 12
+   4
+   2 3
+   6
+   5
+   3
+   3 1
+   2 2 2
+   3 4 2
+   2 5 2
+   2 2 2 2
+   5 5
+   3 3
+   2
+   4
+   1 2 4
+   12
+   8 2
+   5 3
+   4
+   3
+   3
+   4
+   4
+   2 2
+   6
+   4
+
+.. vim:ft=rst ts=3 sts=3 sw=3 et
