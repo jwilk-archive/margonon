@@ -11,10 +11,16 @@ def stred(lst):
     else:
         return '0'
 
+def normalize_line(line):
+    return ''.join(
+        'X '[c.isspace()]
+        for c in line
+    )
+
 def smoothen(pict):
     max_width = max(len(line) for line in pict)
     return [
-        line + (max_width - len(line)) * ' '
+        normalize_line(line) + (max_width - len(line)) * ' '
         for line in pict
     ]
 
