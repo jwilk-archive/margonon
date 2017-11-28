@@ -7,13 +7,10 @@
 import sys
 
 def stred(lst):
-    if len(lst) == 0:
-        return '0'
-    elif len(lst) == 1:
-        return '%d' % lst[0]
+    if lst:
+        return ' '.join(map(str, lst))
     else:
-        lst = map((lambda i: '%s' % i), lst)
-        return reduce((lambda a, b: '%s %s' % (a, b)), lst)
+        return '0'
 
 s = [line[:-1] for line in sys.stdin]
 width = len(s[0])/2
