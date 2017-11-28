@@ -25,7 +25,7 @@ def main():
             if (prev == 'X') and (curr == ' '):
                 lst.append(c)
                 c = 0
-            elif (curr == 'X'):
+            elif curr == 'X':
                 c += 1
             prev = curr
         if c > 0:
@@ -40,7 +40,7 @@ def main():
             if (prev == 'X') and (curr == ' '):
                 lst.append(c)
                 c = 0
-            elif (curr == 'X'):
+            elif curr == 'X':
                 c += 1
             prev = curr
         if c > 0:
