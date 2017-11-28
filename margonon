@@ -4,7 +4,7 @@ import sys
 
 def stred(lst):
 	if len(lst) == 0:
-		return ''
+		return '0'
 	elif len(lst) == 1:
 		return '%d' % lst[0]
 	else:
