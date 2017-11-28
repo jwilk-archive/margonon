@@ -11,8 +11,16 @@ def stred(lst):
     else:
         return '0'
 
+def smoothen(pict):
+    max_width = max(len(line) for line in pict)
+    return [
+        line + (max_width - len(line)) * ' '
+        for line in pict
+    ]
+
 def main():
     s = [line.rstrip('\r\n') for line in sys.stdin]
+    s = smoothen(s)
     width = len(s[0])
     height = len(s)
     print(width, height)
