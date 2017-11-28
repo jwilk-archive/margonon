@@ -12,42 +12,43 @@ def stred(lst):
     else:
         return '0'
 
-s = [line.rstrip('\r\n') for line in sys.stdin]
-width = len(s[0])/2
-height = len(s)
-
-print width, height
-
-for y in range(height):
-    c = 0
-    lst = []
-    prev = ' '
-    for x in range(width):
-        curr = s[y][2*x]
-        if (prev == 'X') & (curr == ' '):
-            lst.append(c)
-            c = 0
-        elif (curr == 'X'):
-            c = c+1
-        prev = curr
-    if c > 0:
-        lst.append(c)
-    print stred(lst)
-
-for x in range(width):
-    c = 0
-    lst = []
-    prev = ' '
+def main():
+    s = [line.rstrip('\r\n') for line in sys.stdin]
+    width = len(s[0])/2
+    height = len(s)
+    print width, height
     for y in range(height):
-        curr = s[y][2*x]
-        if (prev == 'X') & (curr == ' '):
+        c = 0
+        lst = []
+        prev = ' '
+        for x in range(width):
+            curr = s[y][2*x]
+            if (prev == 'X') & (curr == ' '):
+                lst.append(c)
+                c = 0
+            elif (curr == 'X'):
+                c = c+1
+            prev = curr
+        if c > 0:
             lst.append(c)
-            c = 0
-        elif (curr == 'X'):
-            c = c+1
-        prev = curr
-    if c > 0:
-        lst.append(c)
-    print stred(lst)
+        print stred(lst)
+    for x in range(width):
+        c = 0
+        lst = []
+        prev = ' '
+        for y in range(height):
+            curr = s[y][2*x]
+            if (prev == 'X') & (curr == ' '):
+                lst.append(c)
+                c = 0
+            elif (curr == 'X'):
+                c = c+1
+            prev = curr
+        if c > 0:
+            lst.append(c)
+        print stred(lst)
+
+if __name__ == '__main__':
+    main()
 
 # vim:ts=4 sts=4 sw=4 et
