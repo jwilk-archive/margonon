@@ -12,7 +12,7 @@ def stred(lst):
     else:
         return '0'
 
-s = [line[:-1] for line in sys.stdin]
+s = [line.rstrip('\r\n') for line in sys.stdin]
 width = len(s[0])/2
 height = len(s)
 
