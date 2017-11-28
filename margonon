@@ -22,7 +22,7 @@ def main():
         prev = ' '
         for x in range(width):
             curr = s[y][x]
-            if (prev == 'X') & (curr == ' '):
+            if (prev == 'X') and (curr == ' '):
                 lst.append(c)
                 c = 0
             elif (curr == 'X'):
@@ -37,7 +37,7 @@ def main():
         prev = ' '
         for y in range(height):
             curr = s[y][x]
-            if (prev == 'X') & (curr == ' '):
+            if (prev == 'X') and (curr == ' '):
                 lst.append(c)
                 c = 0
             elif (curr == 'X'):
