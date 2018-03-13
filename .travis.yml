@@ -11,7 +11,7 @@ python:
 install:
 - pip install pydiatra pyflakes
 script:
-- python margonon < test/image
+- ./margonon < test/image
 - python3 -m pydiatra .
 - python3 -m pyflakes .
 
