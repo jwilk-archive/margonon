@@ -1,6 +1,6 @@
 .. code:: console
 
-   $ cat test/image
+   $ cat t/image
     XXXX
    XX XXX
    XXXXXX
@@ -14,7 +14,7 @@
      XXXXX  XXXXX
       XXX    XXX
 
-   $ margonon < test/image
+   $ margonon < t/image
    14 12
    4
    2 3
